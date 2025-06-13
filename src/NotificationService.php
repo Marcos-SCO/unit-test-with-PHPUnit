@@ -11,6 +11,13 @@ class NotificationService
     {
         $subject = 'New Notification';
 
-        return $this->mailer->sendEmail($recipientEmail, $subject, $message);
+        try {
+
+            return $this->mailer->sendEmail($recipientEmail, $subject, $message);
+            
+        } catch (RuntimeException $e) {
+
+            throw new NotificationException('Could not send notification', 0, $e);
+        }
     }
 }
