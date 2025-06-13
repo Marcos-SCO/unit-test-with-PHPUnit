@@ -26,3 +26,8 @@ vendor/bin/phpunit --version
  ```bash
  vendor/bin/phpunit tests/FunctionsTest.php --testdox --colors=always --bootstrap tests/bootstrap.php
  ```
+
+- generate a configuration file
+ ```bash
+ vendor/bin/phpunit --generate-configuration
+ ```
