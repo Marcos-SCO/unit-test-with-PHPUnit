@@ -21,3 +21,8 @@ vendor/bin/phpunit --version
  ```bash
  vendor/bin/phpunit tests/FunctionsTest.php --testdox --colors=always
  ```
+
+- Bootstrap file
+ ```bash
+ vendor/bin/phpunit tests/FunctionsTest.php --testdox --colors=always --bootstrap tests/bootstrap.php
+ ```
