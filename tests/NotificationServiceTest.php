@@ -34,4 +34,18 @@ final class NotificationServiceTest extends TestCase
 
         $service->sendNotification('marcos@test.com', 'Hello');
     }
+
+    public function testMailerIsCalledCorrectly(): void
+    {
+        $mailer = $this->createMock(Mailer::class);
+
+        $mailer->expects($this->once())
+            ->method('sendEmail')
+            ->with('marcos@test.com', 'New Notification', 'Hi')
+            ->willReturn(true);
+
+        $service = new NotificationService($mailer);
+
+        $this->assertTrue($service->sendNotification('marcos@test.com', 'Hi'));
+    }
 }
