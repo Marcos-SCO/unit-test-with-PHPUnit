@@ -31,6 +31,6 @@ class Person
 
     public function getFullName(): string
     {
-        return $this->firstName . ' ' . $this->surname;
+        return trim($this->firstName . ' ' . ($this->surname ?? null));
     }
 }
